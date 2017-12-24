@@ -1,0 +1,56 @@
+{
+  "name": "va-sampler",
+  "version": "1.0.0",
+  "description": "Variational encoder sampling and visualization. ",
+  "author": "Cagatay Demiralp",
+  "main": "index.js",
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-2"
+    ]
+  },
+  "style": [
+    "client/**/*.css"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "analytics": "analytics_server/server.py",
+    "clean": "rimraf dist/* build/*",
+    "build:server": "babel web_server -d build && cp web_server/index.html build/",
+    "build:client": "webpack --config ./client/bundle.cfg",
+    "build": "npm run build:server && npm run build:client",
+    "start": "npm run build:client && npm run build:server && node build/server.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "d3": "^4.12.0",
+    "express": "^4.16.2",
+    "material-ui": "^1.0.0-beta.23",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "open": "0.0.5",
+    "path": "^0.12.7",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.19.1",
+    "svg-inline-loader": "^0.8.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0"
+  }
+}

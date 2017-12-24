@@ -1,0 +1,11 @@
+body {
+  font-family:'Avenir';
+}
+
+input[type="range"]{
+    width:100%;
+}
+
+.container-fluid{
+    background: lightgray;
+}
