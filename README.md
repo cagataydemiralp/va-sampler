@@ -1,5 +1,5 @@
 
-Interactive Variational Autoencoder Sampling and Visualization
+Interactive Variational Autoencoder Sampler
 ============================== 
 
 <img src=https://github.com/cagataydemiralp/va-viewer/raw/master/screenrec.gif  width="768" style="box-shadow: 5px 10px;"/>
