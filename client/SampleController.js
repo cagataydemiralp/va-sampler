@@ -3,8 +3,23 @@ import { FormGroup, FormControl, FormLabel, FormControlLabel, FormHelperText} fr
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from './Actions';
+import Grid from 'material-ui/Grid'; 
+import {withStyles} from 'material-ui/styles';
 
+const styles = {
+  cdf: {
+    fontFamily:'Avenir',
+    opacity:0.7
+  }
+  ,
+  zparam: {
+    color: 'orangered',
+    opacity: 0.7,
+    fontSize:'0.7rem'
+  }
+};
 
+    
 class SampleController extends React.Component{
 
   constructor(props){
@@ -36,7 +51,7 @@ class SampleController extends React.Component{
 
   render(){
 
-    const {numSliders} = this.props; 
+    const {numSliders, classes} = this.props; 
 
 
     return(
@@ -56,8 +71,14 @@ class SampleController extends React.Component{
 	   ))
 	 }
         </FormGroup>
-      <FormHelperText>{this.props.data+',zdim='
+      <FormHelperText >{this.props.data+', zdim='
 	+(this.props.numSliders+(2*(this.format==='grid')))}
+      </FormHelperText>
+      <FormHelperText className={classes.cdf}>cdf<sup>-1</sup>
+      (<span className={classes.zparam}>
+	{(this.format === 'grid' ? '*,*,':'')+
+	  this.state.z.map(d=>d.toFixed(2)).join(',')}
+	</span>)
       </FormHelperText>
       </FormControl>
     );
@@ -69,6 +90,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(null, mapDispatchToProps)(SampleController);
+export default withStyles(styles)(connect(null, mapDispatchToProps)(SampleController));
 
 
