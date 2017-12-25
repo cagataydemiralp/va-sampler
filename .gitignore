@@ -2,6 +2,8 @@
 .*
 ~*
 
+analytics_server/*.sh
+
 # ignore node  dependency directories
 node_modules/
 
