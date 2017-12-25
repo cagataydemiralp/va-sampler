@@ -4,10 +4,11 @@ Interactive Variational Autoencoder Sampling and Visualization
 
 <img src=https://github.com/cagataydemiralp/va-viewer/raw/master/screenrec.gif  width="768" style="box-shadow: 5px 10px;"/>
 
-This is a basic variational autoencoder sampler that I've created to support the discussion of
-the paper, [Auto-Encoding Variational Bayes](https://arxiv.org/pdf/1312.6114.pdf), at our reading 
-group. It may also help others reading the paper. The autoencoder implementation is based 
-on [Keras](https://github.com/keras-team/keras/blob/master/examples/variational_autoencoder.py). 
+This is a basic variational autoencoder sampler that I've created to support
+the discussion of the paper, [Auto-Encoding Variational
+Bayes](https://arxiv.org/pdf/1312.6114.pdf), at our reading group. It may also
+help others reading the paper. The autoencoder implementation is based on
+[Keras](https://github.com/keras-team/keras/blob/master/examples/variational_autoencoder.py). 
 
 You can play with [the live
 version](http://hci.stanford.edu/~cagatay/projects/va-viewer/) or download,
@@ -41,6 +42,10 @@ installed, you can install it by following the instructions
 [here](https://pip.pypa.io/en/stable/installing/).  
     
 
-To build & run,  first run `npm run analytics` (alternative, change dir to 
-`analytics_server/'  and `python ./server.py`)  and then open another 
-terminal and enter `npm run start`.
+To build & run,  first enter `npm run analytics` in `va-sampler/`
+(alternatively, change dir to `analytics_server/'  and `python ./server.py`) to
+start the Python server and then open another terminal and enter `npm run
+start` to start the web client. The last step will open a tab in your default
+browser to show the running application.  
+
+
