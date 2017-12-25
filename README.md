@@ -5,8 +5,8 @@ Interactive Variational Autoencoder Sampling and Visualization
 <img src=https://github.com/cagataydemiralp/va-viewer/raw/master/screenrec.gif  width="768" style="box-shadow: 5px 10px;"/>
 
 This is a basic variational autoencoder sampler that I've created to support
-the discussion of the paper, [Auto-Encoding Variational
-Bayes](https://arxiv.org/pdf/1312.6114.pdf), at our reading group. It may also
+the discussion of  [Auto-Encoding Variational
+Bayes](https://arxiv.org/pdf/1312.6114.pdf) at our reading group. It may also
 help others reading the paper. The autoencoder implementation is based on
 [Keras](https://github.com/keras-team/keras/blob/master/examples/variational_autoencoder.py). 
 
