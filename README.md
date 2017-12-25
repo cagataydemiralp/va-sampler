@@ -2,7 +2,7 @@
 Interactive Variational Autoencoder Sampler
 ============================== 
 
-<img src=https://github.com/cagataydemiralp/va-viewer/raw/master/screenrec.gif  width="768" style="box-shadow: 5px 10px;"/>
+<img src=https://github.com/cagataydemiralp/va-sampler/raw/master/screenrec.gif  width="768" style="box-shadow: 5px 10px;"/>
 
 This is an interactive variational autoencoder sampler that I've created to support
 the discussion of  [Auto-Encoding Variational
@@ -11,7 +11,7 @@ help others reading the paper. The autoencoder implementation is based on
 [Keras](https://github.com/keras-team/keras/blob/master/examples/variational_autoencoder.py). 
 
 You can play with [the live
-version](http://hci.stanford.edu/~cagatay/projects/va-viewer/) or download,
+version](http://hci.stanford.edu/~cagatay/projects/va-sampler/) or download,
 build and experiment with the source code, which I recommend. The live app uses
 a low-power compute server for autoencoder computations. So, you may experience
 some lag while interacting with the grid visualizations (the third column).
