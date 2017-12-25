@@ -20,8 +20,10 @@
     "clean": "rimraf dist/* build/*",
     "build:server": "babel web_server -d build && cp web_server/index.html build/",
     "build:client": "webpack --config ./client/bundle.cfg",
+    "build:client:opt": "webpack --optimize-minimize --config ./client/bundle.cfg",
     "build": "npm run build:server && npm run build:client",
-    "start": "npm run build:client && npm run build:server && node build/server.js"
+    "start": "npm run build:client && npm run build:server && node build/server.js",
+  "start:opt": "npm run build:client:opt && npm run build:server && node build/server.js"
   },
   "license": "ISC",
   "dependencies": {
@@ -50,6 +52,7 @@
     "rimraf": "^2.6.2",
     "style-loader": "^0.19.1",
     "svg-inline-loader": "^0.8.0",
+    "uglifyjs-webpack-plugin": "^1.1.4",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0"
   }
