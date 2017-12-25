@@ -1,7 +1,7 @@
 {
   "name": "va-sampler",
   "version": "1.0.0",
-  "description": "Variational encoder sampling and visualization. ",
+  "description": "Interactive variational encoder sampling and visualization. ",
   "author": "Cagatay Demiralp",
   "repository" :
   { "type" : "git",
@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "analytics": "analytics_server/server.py",
+    "analytics": "cd analytics_server && python server.py",
     "clean": "rimraf dist/* build/*",
     "build:server": "babel web_server -d build && cp web_server/index.html build/",
     "build:client": "webpack --config ./client/bundle.cfg",
