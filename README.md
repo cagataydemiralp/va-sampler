@@ -4,7 +4,7 @@ Interactive Variational Autoencoder Sampler
 
 <img src=https://github.com/cagataydemiralp/va-viewer/raw/master/screenrec.gif  width="768" style="box-shadow: 5px 10px;"/>
 
-This is a basic variational autoencoder sampler that I've created to support
+This is an interactive variational autoencoder sampler that I've created to support
 the discussion of  [Auto-Encoding Variational
 Bayes](https://arxiv.org/pdf/1312.6114.pdf) at our reading group. It may also
 help others reading the paper. The autoencoder implementation is based on
