@@ -2,7 +2,7 @@
 Variational Autoencoder Viewer  
 ============================== 
 
-<img src=https://raw.githubusercontent.com/cagataydemiralp/va-viewer/master/screenrec.gif/ width='480px'>
+![Alt Text](https://github.com/{cagataydemiralp}/va-viewer/raw/master/screenrec.gif)
 
 This is a basic variational autoencoder  visualizer that I've created to support the discussion of
 the paper, [Auto-Encoding Variational Bayes](https://arxiv.org/pdf/1312.6114.pdf), at our reading 
