@@ -11,15 +11,31 @@ on [Keras](https://github.com/keras-team/keras/blob/master/examples/variational_
 
 You can play with [the live app](http://hci.stanford.edu/~cagatay/projects/va-viewer/) or download, 
 build and experiment with the source code, which I
-recommend. The live app uses a free, low power compute server for autoencoder
+recommend. The live app uses a low-power (i.e., free) compute server for autoencoder
 computations. So, you may experience some lag while interacting with the grid
 visualizations (the third column). Otherwise, slider interactions should be
 fluid.  
 
+The viewer enables interactive  sampling from the 2- and 4-dimensional latent
+encoding spaces of the MNIST (_first row_) and FASHION MNIST (_second row_)
+datasets,  obtained using the probabilistic encoding proposed in the paper.
+The encoding space learned by the variational autoencoder here is the parameter
+space (z) of a probabilistic representation of the dataset, which can be
+sampled from (i.e., generative). You can change the z values using the sliders
+and see the corresponding image samples. Sliders range between 0.05 and 0.95,
+and z values for sampling are obtained by applying the inverse cumulative
+distribution function (CDF) of the Gaussian to the slider values. You can
+sample a single image from the encoding space (first two columns) or a grid of
+images (third column), where the first two latent dimensions are used (fixed)
+to create image samples using z values sampled on a 4 by 4 grid and the
+remaining two can be dynamically changed using the sliders.  You can try to
+increase the grid resolution if you have a high powered  server.         
+
 To install, download or clone the repo and then run `npm install` in the
-va-viewer folder. As for the backend, you'll need to run `pip install -r requirements.txt`
-in the analytics_server folder. If you don't have `pip` installed, install following 
-the instructions [here](https://pip.pypa.io/en/stable/installing/).  
+va-viewer folder. As for the backend, you'll need to run `pip install -r
+requirements.txt` in the `analytics_server` folder. If you don't have `pip`
+installed, you can install it by following the instructions
+[here](https://pip.pypa.io/en/stable/installing/).  
     
 
 To build & run, `npm run start`.
