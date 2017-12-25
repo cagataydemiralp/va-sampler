@@ -38,7 +38,7 @@ You can try to increase the grid resolution if you have the compute power.
 To install, download or clone the repo and then run `npm install` in the
 `va-sampler` folder. As for the backend, you'll need to run `pip install -r
 requirements.txt` in the `analytics_server` folder. If you don't have `pip`
-installed, you can install it by following the instructions
+installed, install it by following the instructions
 [here](https://pip.pypa.io/en/stable/installing/).  
     
 
