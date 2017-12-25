@@ -6,7 +6,6 @@ __author__ = 'cagatay@fitnescity.com'
 import time
 import sys
 import numpy as np
-#import matplotlib.pyplot as plt
 from scipy.stats import norm
 
 from keras.layers import Input, Dense, Lambda, Layer
@@ -32,7 +31,7 @@ graph_fashion_z2 = tf.get_default_graph()
 fashion_z4=load_model('fashion-va-decoder-zdim-4.h5')
 fashion_z4._make_predict_function()
 graph_fashion_z4 = tf.get_default_graph()
-digit_size = 28
+img_size = 28
 
 decoders = dict(mnist_z2=(mnist_z2,graph_mnist_z2), mnist_z4=(mnist_z4,graph_mnist_z4), fashion_z2=(fashion_z2,graph_fashion_z2), fashion_z4=(fashion_z4,graph_fashion_z4))
 
@@ -45,10 +44,10 @@ def single_sample(decoder,graph,z):
     z_sample=norm.ppf(np.array([z]))
     with graph.as_default():
         decoded = decoder.predict(z_sample)
-        sampled_digit = decoded[0].reshape(digit_size, digit_size)
-        sampled_digit -= np.min(sampled_digit)
-        sampled_digit = np.round(sampled_digit * (255.0 / np.max(sampled_digit)))
-    return sampled_digit.tolist()
+        sampled = decoded[0].reshape(img_size, img_size)
+        sampled -= np.min(sampled)
+        sampled = np.round(sampled * (255.0 / np.max(sampled)))
+    return sampled.tolist()
 
 def grid_sample(decoder,graph,z,grid):
     start,end,num=grid

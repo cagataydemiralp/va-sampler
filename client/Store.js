@@ -9,25 +9,5 @@ export default function configureStore() {
         applyMiddleware(thunk)
     );
 
-    // return createStore(rootReducer);
-    // const store = createStore( rootReducer, compose(applyMiddleware(thunk),
-    //     window.devToolsExtension ? window.devToolsExtension() : f => f));
-
-  //const store = createStore( rootReducer, compose(applyMiddleware(thunk),
-	  //window.devToolsExtension ? window.devToolsExtension() : f => f));
-
-  // if (module.hot) {
-  //   module.hot.accept('./Reducers', () => {
-  //     const nextReducer = rootReducer;
-  //     store.replaceReducer(nextReducer);
-  //   });
-  // }
-
-  //   return store;
-
 }
-
-
-
-
 

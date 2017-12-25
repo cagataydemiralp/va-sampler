@@ -26,13 +26,7 @@ class GridSampleImage extends React.Component{
 	 for(i = 0; i < m; i++){
 	   for(j = 0; j < m; j++) {
             v = +img[i][j];
-            //indx =  i*m*4 + 4*j;
-	    //this.image.data[indx]= v;*/
-	    //this.image.data[indx+1]= v;
-	    //this.image.data[indx+2]= v;
-	    //this.image.data[indx+3]= 255;
             indx = i*m + j;
-	    //this is a bit faster 
              this.data[indx] = (255  << 24) |    
                 (v << 16) |             
                 (v <<  8) |             

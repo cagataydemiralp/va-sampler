@@ -17,17 +17,12 @@ class SampleImage extends React.Component{
    let i,j,v,indx;  
     for(i = 0; i < m; i++){
         for(j = 0; j < m; j++) {
-            /*indx =  i*m*4 + 4*j;*/
             v = +imgArray[i][j];
-	    //this.image.data[indx]= v;
-	    //this.image.data[indx+1]= v;
-	    //this.image.data[indx+2]= v;
-	    /*this.image.data[indx+3]= 255;*/
 	     indx = i*m + j;
-             this.data[indx] = (255  << 24) |    // alpha*/
-                (v << 16) |             // blue
-                (v <<  8) |             // green
-                v;                     // red */
+             this.data[indx] = (255  << 24) |    
+                (v << 16) |             
+                (v <<  8) |             
+                v;                     
       }
     }
 

@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Variational encoder sampling and visualization. ",
   "author": "Cagatay Demiralp",
+  "repository" :
+  { "type" : "git",
+   "url" : "https://github.com/cagataydemiralp/va-viewer.git"
+  },
   "main": "index.js",
   "babel": {
     "presets": [
@@ -23,7 +27,7 @@
     "build:client:opt": "webpack --optimize-minimize --config ./client/bundle.cfg",
     "build": "npm run build:server && npm run build:client",
     "start": "npm run build:client && npm run build:server && node build/server.js",
-  "start:opt": "npm run build:client:opt && npm run build:server && node build/server.js"
+    "start:opt": "npm run build:client:opt && npm run build:server && node build/server.js"
   },
   "license": "ISC",
   "dependencies": {
