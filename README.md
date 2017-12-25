@@ -32,7 +32,7 @@ images (third column), where the first two latent dimensions are used (fixed)
 to create image samples using z values sampled on a 4-by-4 grid and the
 remaining two can be dynamically changed using the sliders. For example, the
 image sample on the grid location (row#3,col#4)  represents the sample obtained
-using z = GaussianInverseCDF([0.95, 0.65,_slider-0-value_, _slider-1-value_]).
+using z = _GaussianInverseCDF_([0.95, 0.65, _slider-0-value_, _slider-1-value_]).
 You can try to increase the grid resolution if you have the compute power.         
 
 To install, download or clone the repo and then run `npm install` in the
