@@ -1,0 +1,16 @@
+# Requirements for analytics_server/server.py  
+
+Flask == 0.12.2
+
+Flask_Cors == 3.0.3
+
+Keras == 2.1.2
+
+numpy == 1.13.3
+
+scipy == 1.0.0
+
+tensorflow == 1.4.1
+
+h5py==2.6.0
+
