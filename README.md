@@ -2,7 +2,7 @@
 Variational Autoencoder Viewer  
 ============================== 
 This is a basic variational autoencoder  visualizer that I've created to support the discussion of
-the paper, [https://arxiv.org/pdf/1312.6114.pdf](Auto-Encoding Variational Bayes), at our reading 
+the paper, [Auto-Encoding Variational Bayes](https://arxiv.org/pdf/1312.6114.pdf), at our reading 
 group. It may also help others reading the paper. The autoencoder implementation is based 
 on [https://github.com/keras-team/keras/blob/master/examples/variational_autoencoder.py](Keras). 
 
