@@ -31,8 +31,8 @@ sample a single image from the encoding space (first two columns) or a grid of
 images (third column), where the first two latent dimensions are used (fixed)
 to create image samples using z values sampled on a 4-by-4 grid and the
 remaining two can be dynamically changed using the sliders. For example, the
-image sample on the grid location (row#3,col#4)  represents the sample obtained
-using z = _GaussianInverseCDF_([0.95, 0.65, _slider#0value_, _slider#1value_]).
+image sample on the grid location (row#3, col#4)  represents the sample obtained
+using z = _GaussianInverseCDF_([0.95, 0.65, _Slider#0Value_, _Slider#1Value_]).
 You can try to increase the grid resolution if you have the compute power.         
 
 To install, download or clone the repo and then run `npm install` in the
@@ -46,6 +46,6 @@ To build & run,  first enter `npm run analytics` in `va-sampler/`
 (alternatively, change dir to `analytics_server/'  and `python ./server.py`) to
 start the Python server and then open another terminal and enter `npm run
 start` to start the web client. The last step will open a tab in your default
-browser to show the running application.  
+browser & show the running application.  
 
 
