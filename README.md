@@ -17,19 +17,22 @@ visualizations (the third column). Otherwise, slider interactions should be
 fluid.  
 
 The viewer enables interactive  sampling from the 2- and 4-dimensional latent
-encoding spaces of the MNIST (_first row_) and FASHION MNIST (_second row_)
-datasets,  obtained using the probabilistic encoding proposed in the paper.
-The encoding space learned by the variational autoencoder here is the parameter
-space (z) of a probabilistic representation of the dataset, which can be
-sampled from (i.e., generative). You can change the z values using the sliders
-and see the corresponding image samples. Sliders range between 0.05 and 0.95,
-and z values for sampling are obtained by applying the inverse cumulative
+encoding spaces of the [MNIST](http://yann.lecun.com/exdb/mnist/)(_first row_)
+and [Fashion MNIST](https://github.com/zalandoresearch/fashion-mnist)(_second
+row_) datasets,  obtained using the probabilistic encoding proposed in the
+paper.  The encoding space learned by the variational autoencoder here is the
+parameter space (z) of a probabilistic representation of the dataset, which can
+be sampled from (i.e., generative). You can change the z values using the
+sliders and see the corresponding image samples. Sliders range between 0.05 and
+0.95, and z values for sampling are obtained by applying the inverse cumulative
 distribution function (CDF) of the Gaussian to the slider values. You can
 sample a single image from the encoding space (first two columns) or a grid of
 images (third column), where the first two latent dimensions are used (fixed)
-to create image samples using z values sampled on a 4 by 4 grid and the
-remaining two can be dynamically changed using the sliders.  You can try to
-increase the grid resolution if you have a high powered  server.         
+to create image samples using z values sampled on a 4-by-4 grid and the
+remaining two can be dynamically changed using the sliders. For example, the
+image sample on the grid location (row-3,col-4)  represents the sample obtained
+using z = GaussianInverseCDF([0.95, 0.65,_slider-0 value_, _slider-1-value_]).
+You can try to increase the grid resolution if you have the compute power.         
 
 To install, download or clone the repo and then run `npm install` in the
 va-viewer folder. As for the backend, you'll need to run `pip install -r
