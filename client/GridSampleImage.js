@@ -15,9 +15,6 @@ class GridSampleImage extends React.Component{
       gridH = imgArray.length,
       gridW = imgArray[0].length,
       m = imgArray[0][0].length; 
-    
-
-
 
    let I, J, img, i, j, v, indx;  
 
@@ -34,14 +31,12 @@ class GridSampleImage extends React.Component{
 	    //this.image.data[indx+1]= v;
 	    //this.image.data[indx+2]= v;
 	    //this.image.data[indx+3]= 255;
-	     //
             indx = i*m + j;
-
 	    //this is a bit faster 
-             this.data[indx] = (255  << 24) |    // alpha*/
-                (v << 16) |             // blue
-                (v <<  8) |             // green
-                v;                     // red */
+             this.data[indx] = (255  << 24) |    
+                (v << 16) |             
+                (v <<  8) |             
+                v;                     
       }
     }
    this.image.data.set(this.buf8);
