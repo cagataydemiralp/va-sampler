@@ -1,32 +1,43 @@
 import {combineReducers} from 'redux';
-import {MNIST_SAMPLE_Z2_UPDATE, MNIST_SAMPLE_Z4_UPDATE, FASHION_SAMPLE_Z2_UPDATE, FASHION_SAMPLE_Z4_UPDATE} from './ActionTypes'; 
+import { MNIST_Z2_SINGLE_UPDATE, 
+  MNIST_Z4_SINGLE_UPDATE, 
+  MNIST_Z4_GRID_UPDATE, 
+  FASHION_Z2_SINGLE_UPDATE, 
+  FASHION_Z4_SINGLE_UPDATE,
+  FASHION_Z4_GRID_UPDATE} from './ActionTypes'; 
 
 const initialState = {
   mnistZ2:[],
   mnistZ4:[],
+  mnistGridZ4:[[[]]],
   fashionZ2:[],
   fashionZ4:[],
+  fashionGridZ4:[[[]]]
 };
 
 function sample( state = initialState, action ){
 
   switch (action.type) {
 
-    case MNIST_SAMPLE_Z2_UPDATE:{ 
+    case MNIST_Z2_SINGLE_UPDATE:{ 
 
       return Object.assign( {}, state, {mnistZ2:action.data} );
     } 
-     case MNIST_SAMPLE_Z4_UPDATE:{ 
+     case MNIST_Z4_SINGLE_UPDATE:{ 
 
       return Object.assign( {}, state, {mnistZ4:action.data} );
     } 
-     case FASHION_SAMPLE_Z2_UPDATE:{ 
-
+    case MNIST_Z4_GRID_UPDATE:{ 
+      return Object.assign( {}, state, {mnistGridZ4:action.data} );
+    } 
+     case FASHION_Z2_SINGLE_UPDATE:{ 
       return Object.assign( {}, state, {fashionZ2:action.data} );
     } 
-     case FASHION_SAMPLE_Z4_UPDATE:{ 
-
+     case FASHION_Z4_SINGLE_UPDATE:{ 
       return Object.assign( {}, state, {fashionZ4:action.data} );
+    } 
+    case FASHION_Z4_GRID_UPDATE:{ 
+      return Object.assign( {}, state, {fashionGridZ4:action.data} );
     } 
     default:
       return state;

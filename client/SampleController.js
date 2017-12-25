@@ -7,13 +7,23 @@ import * as Actions from './Actions';
 
 class SampleController extends React.Component{
 
-
   constructor(props){
     super(props); 
     this.handleChange = this.handleChange.bind(this); 
+    this.sample = this.sample.bind(this); 
+    this.format = this.props.type ||'single',
     this.state = {z:Array(props.numSliders).fill(0.5)}; 
-    this.name = this.props.data + '_z' + this.props.numSliders; 
-    this.props.actions.sample( {z:[this.state.z], name:this.name});
+    this.sample(); 
+  }
+
+
+  sample(){
+    this.props.actions.sample({
+      z:this.state.z, 
+   name:this.props.name, 
+  format:this.format,
+   grid:[0.05, 0.95, 4]});
+
   }
 
   handleChange = d =>(event)=>{
@@ -21,12 +31,7 @@ class SampleController extends React.Component{
     let z = this.state.z.slice(0);
     z[d]=+event.target.value;
     this.setState({z});
-    //console.log('handling change'); 
-    this.props.actions.sample( {z:[this.state.z], name:this.name});
-  }
-
-  componentDidMount = () => {
-   //this.props.actions.sample( {z:[this.state.z], name:this.name});
+    this.sample();
   }
 
   render(){
@@ -44,18 +49,19 @@ class SampleController extends React.Component{
 	     <input type='range'
 	        min={0.05}
 	        max={0.95}
-	        step={0.01}
+	        step={this.format==='grid'?0.05:0.01}
                 onChange={this.handleChange(d)}
 	        key={d}
                 value={this.state.z[d]}/>
 	   ))
 	 }
         </FormGroup>
-      <FormHelperText>{this.props.data+', zdim='+this.props.numSliders}</FormHelperText>
+      <FormHelperText>{this.props.data+',zdim='
+	+(this.props.numSliders+(2*(this.format==='grid')))}
+      </FormHelperText>
       </FormControl>
     );
   } 
-
 }
 
 function mapDispatchToProps(dispatch) {

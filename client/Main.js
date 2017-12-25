@@ -28,12 +28,14 @@ const Main = ({classes}) => (
           <Grid container justify="center" alignItems="center">
            <Grid item> <VASampler zdim={2} data={'mnist'}/> </Grid>
            <Grid item> <VASampler zdim={4} data={'mnist'}/> </Grid>
+           <Grid item> <VASampler zdim={4} data={'mnist'} type={'grid'}/> </Grid>
           </Grid>
   </Grid>
          <Grid item xs={12}>
          <Grid container justify="center" alignItems="center">
           <Grid item> <VASampler zdim={2} data={'fashion'}/></Grid>
           <Grid item> <VASampler zdim={4} data={'fashion'}/></Grid>
+          <Grid item> <VASampler zdim={4} data={'fashion'} type={'grid'}/></Grid>
          </Grid>
   </Grid>
   </Grid>
