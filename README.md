@@ -14,7 +14,7 @@ You can play with [the live
 version](http://hci.stanford.edu/~cagatay/projects/va-sampler/) or download,
 build and experiment with the source code, which I recommend. The live app uses
 a low-power compute server for autoencoder computations. So, you may experience
-some lag while interacting with the grid visualizations (the third column).
+some lag while interacting with the grid visualizations (_third column_).
 Otherwise, slider interactions should be fluid.  
 
 The viewer enables interactive  sampling from the 2- and 4-dimensional latent
