@@ -15,7 +15,8 @@ class SampleImage extends React.Component{
       m = imgArray.length;
 
    let i,j,v,indx;  
-    for(i = 0; i < m; i++){
+
+    for(i = 0; i < m; i++) {
         for(j = 0; j < m; j++) {
             v = +imgArray[i][j];
 	     indx = i*m + j;
@@ -23,8 +24,8 @@ class SampleImage extends React.Component{
                 (v << 16) |             
                 (v <<  8) |             
                 v;                     
-      }
-    }
+       }
+     }
 
    this.image.data.set(this.buf8);
    this.oscCtx.putImageData(this.image, 0, 0);
@@ -43,6 +44,7 @@ class SampleImage extends React.Component{
     this.buf = new ArrayBuffer(this.image.data.length);
     this.buf8 = new Uint8ClampedArray(this.buf);
     this.data = new Uint32Array(this.buf);
+
     this.updateImage(); 
   }
 
