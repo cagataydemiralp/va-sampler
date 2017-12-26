@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BottomNavigation, { BottomNavigationButton } from 'material-ui/BottomNavigation';
 import { withStyles } from 'material-ui/styles';
-import HomeIcon from 'material-ui-icons/FavoriteBorder';
+import HeartIcon from 'material-ui-icons/FavoriteBorder';
 
 const styles = {
     bottomNavigation: {
@@ -64,7 +64,7 @@ class Footer extends React.Component{
       className={classes.bottomNavigation}
       onChange={this.handleChange}
       showLabels>
-      <BottomNavigationButton label="love the variational" icon={<HomeIcon />}/>
+      <BottomNavigationButton label="love the variational" icon={<HeartIcon />}/>
       </BottomNavigation>
     ); 
   }
