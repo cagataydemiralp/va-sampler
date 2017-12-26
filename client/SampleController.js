@@ -18,7 +18,6 @@ const styles = {
     fontSize:'0.7rem'
   }
 };
-
     
 class SampleController extends React.Component{
 
@@ -51,7 +50,11 @@ class SampleController extends React.Component{
 
   render(){
 
-    const {numSliders, classes} = this.props; 
+    const {numSliders, classes} = this.props,
+      sliderValsString = this.state.z.map(d=>d.toFixed(2)).join(','),
+      zparamLabel = (this.format === 'grid' ? 
+      <span className={classes.zparam}>[<span>g<sub>x</sub>,g<sub>y</sub>,</span>{sliderValsString}]</span>:
+      <span className={classes.zparam}>[{sliderValsString}]</span>); 
 
 
     return(
@@ -75,10 +78,7 @@ class SampleController extends React.Component{
 	+(this.props.numSliders+(2*(this.format==='grid')))}
       </FormHelperText>
       <FormHelperText className={classes.cdf}>z=cdf<sup>-1</sup>
-      [<span className={classes.zparam}>
-	{(this.format === 'grid' ? '*,*,':'')+
-	  this.state.z.map(d=>d.toFixed(2)).join(',')}
-	</span>]
+      {zparamLabel}
       </FormHelperText>
       </FormControl>
     );
@@ -88,7 +88,6 @@ class SampleController extends React.Component{
 function mapDispatchToProps(dispatch) {
     return { actions: bindActionCreators(Actions, dispatch) };
 }
-
 
 export default withStyles(styles)(connect(null, mapDispatchToProps)(SampleController));
 
