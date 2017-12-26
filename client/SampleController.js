@@ -74,11 +74,11 @@ class SampleController extends React.Component{
       <FormHelperText >{this.props.data+', zdim='
 	+(this.props.numSliders+(2*(this.format==='grid')))}
       </FormHelperText>
-      <FormHelperText className={classes.cdf}>cdf<sup>-1</sup>
-      (<span className={classes.zparam}>
+      <FormHelperText className={classes.cdf}>z=cdf<sup>-1</sup>
+      [<span className={classes.zparam}>
 	{(this.format === 'grid' ? '*,*,':'')+
 	  this.state.z.map(d=>d.toFixed(2)).join(',')}
-	</span>)
+	</span>]
       </FormHelperText>
       </FormControl>
     );
