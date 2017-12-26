@@ -3,15 +3,8 @@
 #
 __author__ = 'cagatay@fitnescity.com'
 
-import time
-import sys
 import numpy as np
 from scipy.stats import norm
-
-from keras.layers import Input, Dense, Lambda, Layer
-from keras.models import Model
-from keras import backend as K
-from keras import metrics
 from keras.models import load_model
 import tensorflow as tf
 
