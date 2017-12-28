@@ -24,8 +24,6 @@ menuButton: {
 
 const  Header = ({classes}) => (
 
-  //const { classes } = this.props;
-
   <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <Typography type="title" color="inherit" className={classes.flex}>
