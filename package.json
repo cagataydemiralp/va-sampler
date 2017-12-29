@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Interactive variational encoder sampling and visualization. ",
   "author": "Cagatay Demiralp",
-  "repository" :
-  { "type" : "git",
-   "url" : " https://github.com/cagataydemiralp/va-sampler.git"
+  "repository": {
+    "type": "git",
+    "url": " https://github.com/cagataydemiralp/va-sampler.git"
   },
   "main": "index.js",
   "babel": {
@@ -54,9 +54,7 @@
     "file-loader": "^1.1.5",
     "rimraf": "^2.6.2",
     "style-loader": "^0.19.1",
-    "svg-inline-loader": "^0.8.0",
     "uglifyjs-webpack-plugin": "^1.1.4",
-    "url-loader": "^0.6.2",
     "webpack": "^3.10.0"
   }
 }
