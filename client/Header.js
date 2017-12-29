@@ -18,8 +18,7 @@ menuButton: {
     flex: 1,
     fontWeight:100,
     textAlign:'center'
-  },
-
+  }
 }
 
 const  Header = ({classes}) => (
