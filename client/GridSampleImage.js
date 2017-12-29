@@ -1,10 +1,15 @@
 import React from 'react'
 import {connect} from 'react-redux';
 
+export const GRID_RES=4;
+
 class GridSampleImage extends React.Component{
 
   constructor(props){
     super(props); 
+    this.sampleImgSize=28;  // square images & canvas 
+    this.canvasSize = 168; 
+    this.sampleImgDestSize = ~~( this.canvasSize / GRID_RES ) ; 
     this.updateImage = this.updateImage.bind(this); 
   }
 
@@ -14,7 +19,9 @@ class GridSampleImage extends React.Component{
       imgArray = state[src],
       gridH = imgArray.length,
       gridW = imgArray[0].length,
-      m = imgArray[0][0].length; 
+      m = imgArray[0][0].length,
+      sS = this.sampleImgSize,
+      dS = this.sampleImgDestSize; 
 
    let I, J, img, i, j, v, indx;  
 
@@ -35,20 +42,20 @@ class GridSampleImage extends React.Component{
     }
    this.image.data.set(this.buf8);
    this.oscCtx.putImageData(this.image, 0, 0);
-   this.ctx.drawImage(this.osc,0, 0, 28, 28, I*42, J*42, 42, 42); 
+   this.ctx.drawImage(this.osc, 0, 0, sS, sS, I*dS, J*dS, dS, dS); 
    }
   }
   }
 
   componentDidMount(){
     this.osc = document.createElement('canvas'); 
-    this.osc.width = 28;
-    this.osc.height = 28;
+    this.osc.width = this.sampleImgSize;
+    this.osc.height = this.sampleImgSize;
     this.oscCtx = this.osc.getContext('2d');  
     this.ctx = this.refs.canvas.getContext('2d');
     this.ctx.globalCompositeOperation = 'source-over';
     this.ctx.imageSmoothingEnabled = false; 
-    this.image = this.oscCtx.createImageData(28,28);  
+    this.image = this.oscCtx.createImageData(this.sampleImgSize,this.sampleImgSize);  
     this.buf = new ArrayBuffer(this.image.data.length);
     this.buf8 = new Uint8ClampedArray(this.buf);
     this.data = new Uint32Array(this.buf);
@@ -62,7 +69,7 @@ class GridSampleImage extends React.Component{
 
   render(){
     return(
-      <canvas ref="canvas" width={168} height={168} />
+      <canvas ref="canvas" width={this.canvasSize} height={this.canvasSize} />
     )
   }
 }
@@ -71,6 +78,7 @@ class GridSampleImage extends React.Component{
 function mapStateToProps(state) {
     return { state: state.sample};
 }
+
 
 export default connect(mapStateToProps)(GridSampleImage); 
 

@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import * as Actions from './Actions';
 import Grid from 'material-ui/Grid'; 
 import {withStyles} from 'material-ui/styles';
+import {GRID_RES} from './GridSampleImage'; 
 
 const styles = {
   cdf: {
@@ -18,6 +19,7 @@ const styles = {
     fontSize:'0.7rem'
   }
 };
+  
     
 class SampleController extends React.Component{
 
@@ -25,8 +27,13 @@ class SampleController extends React.Component{
     super(props); 
     this.handleChange = this.handleChange.bind(this); 
     this.sample = this.sample.bind(this); 
-    this.format = this.props.type ||'single',
-    this.state = {z:Array(props.numSliders).fill(0.5)}; 
+    this.format = this.props.type ||'single';
+    this.slider = {
+      min:0.05, 
+      step:this.format==='grid'?0.05:0.01, 
+      max:0.95, 
+      val:0.5}; 
+    this.state = {z:Array(props.numSliders).fill(this.slider.val)}; 
     this.sample(); 
   }
 
@@ -36,7 +43,7 @@ class SampleController extends React.Component{
       z:this.state.z, 
    name:this.props.name, 
   format:this.format,
-   grid:[0.05, 0.95, 4]});
+   grid:[this.slider.min, this.slider.max, GRID_RES]});
 
   }
 
@@ -65,9 +72,9 @@ class SampleController extends React.Component{
          {
 	   Array.from(Array(numSliders).keys()).map( d => (
 	     <input type='range'
-	        min={0.05}
-	        max={0.95}
-	        step={this.format==='grid'?0.05:0.01}
+	        min={this.slider.min}
+	        max={this.slider.max}
+	        step={this.slider.step}
                 onChange={this.handleChange(d)}
 	        key={d}
                 value={this.state.z[d]}/>
