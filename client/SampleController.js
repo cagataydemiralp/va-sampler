@@ -30,7 +30,7 @@ class SampleController extends React.Component{
     this.format = this.props.type ||'single';
     this.slider = {
       min:0.05, 
-      step:this.format==='grid'?0.05:0.01, 
+      step:this.format==='grid'?0.075:0.05, 
       max:0.95, 
       val:0.5}; 
     this.state = {z:Array(props.numSliders).fill(this.slider.val)}; 
