@@ -24,12 +24,12 @@
     "clean": "rimraf dist/* build/*",
     "build:server": "babel web_server -d build && cp web_server/index.html build/",
     "build:client": "webpack --config ./client/bundle.cfg",
-    "build:client:opt": "webpack --optimize-minimize --config ./client/bundle.cfg",
+    "build:client:opt": "webpack -p --config ./client/bundle.cfg",
     "build": "npm run build:server && npm run build:client",
     "start": "npm run build:client && npm run build:server && node build/server.js",
     "start:opt": "npm run build:client:opt && npm run build:server && node build/server.js"
   },
-  "license": "ISC",
+  "license": "BSD",
   "dependencies": {
     "axios": "^0.17.1",
     "express": "^4.16.2",
