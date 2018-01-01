@@ -5,6 +5,12 @@ class SampleImage extends React.Component{
 
   constructor(props){
     super(props); 
+    this.sampleImgSize=28;  // square images & canvas 
+    this.canvasSize = 168; 
+    this.osc = document.createElement('canvas'); 
+    this.osc.width = this.sampleImgSize;
+    this.osc.height = this.sampleImgSize;
+    this.oscCtx = this.osc.getContext('2d'); 
     this.updateImage = this.updateImage.bind(this); 
   }
  
@@ -29,18 +35,15 @@ class SampleImage extends React.Component{
 
    this.image.data.set(this.buf8);
    this.oscCtx.putImageData(this.image, 0, 0);
-   this.ctx.drawImage(this.osc,0,0, 168, 168); 
+   this.ctx.drawImage(this.osc, 0, 0, this.canvasSize, this.canvasSize); 
   }
 
   componentDidMount(){
-    this.osc = document.createElement('canvas'); 
-    this.osc.width = 28;
-    this.osc.height = 28;
-    this.oscCtx = this.osc.getContext('2d');  
+    const sS = this.sampleImgSize;   
     this.ctx = this.refs.canvas.getContext('2d');
     this.ctx.globalCompositeOperation = 'source-over';
     this.ctx.imageSmoothingEnabled = false; 
-    this.image = this.oscCtx.getImageData(0,0,28,28);  
+    this.image = this.oscCtx.getImageData(0,0,sS,sS);  
     this.buf = new ArrayBuffer(this.image.data.length);
     this.buf8 = new Uint8ClampedArray(this.buf);
     this.data = new Uint32Array(this.buf);
@@ -54,7 +57,7 @@ class SampleImage extends React.Component{
 
   render(){
     return(
-      <canvas ref="canvas" width={168} height={168} />
+      <canvas ref="canvas" width={this.canvasSize} height={this.canvasSize} />
     )
   }
 }
