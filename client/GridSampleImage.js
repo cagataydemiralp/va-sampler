@@ -10,6 +10,10 @@ class GridSampleImage extends React.Component{
     this.sampleImgSize=28;  // square images & canvas 
     this.canvasSize = 168; 
     this.sampleImgDestSize = ~~( this.canvasSize / GRID_RES ) ; 
+    this.osc = document.createElement('canvas'); 
+    this.osc.width = this.sampleImgSize;
+    this.osc.height = this.sampleImgSize;
+    this.oscCtx = this.osc.getContext('2d'); 
     this.updateImage = this.updateImage.bind(this); 
   }
 
@@ -48,14 +52,11 @@ class GridSampleImage extends React.Component{
   }
 
   componentDidMount(){
-    this.osc = document.createElement('canvas'); 
-    this.osc.width = this.sampleImgSize;
-    this.osc.height = this.sampleImgSize;
-    this.oscCtx = this.osc.getContext('2d');  
+    const sS=this.sampleImgSize;
     this.ctx = this.refs.canvas.getContext('2d');
     this.ctx.globalCompositeOperation = 'source-over';
     this.ctx.imageSmoothingEnabled = false; 
-    this.image = this.oscCtx.createImageData(this.sampleImgSize,this.sampleImgSize);  
+    this.image = this.oscCtx.createImageData(sS,sS);  
     this.buf = new ArrayBuffer(this.image.data.length);
     this.buf8 = new Uint8ClampedArray(this.buf);
     this.data = new Uint32Array(this.buf);
