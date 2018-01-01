@@ -10,14 +10,14 @@ const styles = {
     opacity:0.7,
     background:'black',
   },
-menuButton: {
+  menuButton: {
     marginLeft: -12,
     marginRight: 20,
-  }, 
+  },
   flex: {
-    flex: 1,
-    fontWeight:100,
-    textAlign:'center'
+   flex: 1,
+   fontWeight:100,
+   textAlign:'center'
   }
 }
 
@@ -32,5 +32,4 @@ const  Header = ({classes}) => (
       </AppBar>)
 
 export default withStyles(styles)(Header); 
-
 
