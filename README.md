@@ -42,7 +42,7 @@ installed, install it by following the instructions
 [here](https://pip.pypa.io/en/stable/installing/).  
     
 
-To build & run,  first enter `npm run analytics` in `va-sampler/`
+To build & run,  first enter `npm run analytics` under `va-sampler/`
 (alternatively, change dir to `analytics_server/`  and `python ./server.py`) to
 start the Python server and then open another terminal and enter `npm run
 start` to start the web client. The last step will open a tab in your default
