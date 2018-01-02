@@ -29,7 +29,7 @@
     "start": "npm run build:client && npm run build:server && node build/server.js",
     "start:opt": "npm run build:client:opt && npm run build:server && node build/server.js"
   },
-  "license": "BSD",
+  "license": "BSD-3-Clause",
   "dependencies": {
     "axios": "^0.17.1",
     "express": "^4.16.2",
